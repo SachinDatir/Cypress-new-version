@@ -1,0 +1,1 @@
+`declare module 'covert-json-to-excel';`
