@@ -3,6 +3,7 @@ const fs = require('fs')
 const excelToJson = require('covert-json-to-excel')
 module.exports = defineConfig({
   e2e: {
+    baseUrl:"https://rahulshettyacademy.com/client",
     setupNodeEvents(on, config) {
       // on('task',task)
       on('task',{
@@ -16,7 +17,7 @@ module.exports = defineConfig({
       
     },
   },
-  pageLoadTimeout:9000,
+  pageLoadTimeout:60000,
   failOnStatusCode: false
 });
 

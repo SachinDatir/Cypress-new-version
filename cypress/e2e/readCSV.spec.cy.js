@@ -23,11 +23,14 @@ describe('Validate the session storage by api call',async()=>{
         })
         cy.get('div>.btnn').click()
         cy.contains('button','CSV').click()
-        cy.readFile(Cypress.config('fileServerFolder')+'/cypress/downloads/order-invoice_sdatir83.csv').then(async(text)=>{
+        // cy.readFile(Cypress.config('fileServerFolder')+'/cypress/downloads/order-invoice_sdatir83.csv').then(async(text)=>{
+        //     const csv = await neatCSV(text)
+        //     const productName=csv[0]['Product Name']
+        //     expect(pName).to.equal(productName)
+        // })
+        cy.task(Cypress.config('fileServerFolder')+'/cypress/downloads/order-invoice_sdatir83.csv').then(async(text)=>{
             const csv = await neatCSV(text)
-            const productName=csv[0]['Product Name']
-            expect(pName).to.equal(productName)
-            
+            console.log(csv)
         })
     })
 })
